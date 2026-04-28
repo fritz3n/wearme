@@ -1,0 +1,59 @@
+html,
+body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    --gap: 1rem;
+
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #eee;
+    margin: 0;
+    padding: var(--gap);
+
+
+
+}
+
+#container {
+    height: calc(100% - var(--gap) * 2);
+    width: calc(100% - var(--gap) * 2);
+    /* display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            flex-wrap: wrap; */
+
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr;
+
+    gap: var(--gap);
+}
+
+button {
+    transition: background 100ms;
+    color: #eee;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid #888;
+    border-radius: 4px;
+    background: #333;
+    cursor: pointer;
+    font-size: 4rem;
+}
+
+button.hold {
+    background: #600;
+}
+
+button.active {
+    background: #060;
+}
+
+button.idle {
+    background: #660;
+}

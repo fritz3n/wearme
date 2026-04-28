@@ -1,5 +1,6 @@
 #include "webserver.h"
 #include <ESPAsyncWebServer.h>
+#include <SPIFFS.h>
 
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
@@ -38,4 +39,5 @@ void Webserver::setup()
 {
     ws.onEvent(onWebsocketEvent);
     server.addHandler(&ws);
+    server.serveStatic("/", SPIFFS, "/").setDefaultFile("index.html");
 }
